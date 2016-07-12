@@ -4,11 +4,17 @@
 	<title>Lance's Awsome Chat App</title>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
 
 </head>
 <body ng-controller = 'mainCtrl' ng-cloak>
 
-
+<div class="row container">
+    <form class="col s6" ng-submit='postChat()'>
+     	<input class = 'valign-wrapper' type="text" ng-model='newChat'> 
+     	<input type = 'submit'>       
+    </form>
+  </div>
 
 
 

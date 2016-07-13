@@ -4,21 +4,35 @@
 	<title>Lance's Awsome Chat App</title>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css"> -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
 </head>
 <body ng-controller = 'mainCtrl' ng-cloak>
-
-<div class="row container">
-    <form class="col s6" ng-submit='postChat()'>
-     	<input class = 'valign-wrapper' type="text" ng-model='newChat'> 
-     	<input type = 'submit'>       
-    </form>
-  </div>
-	<div>
-		<button type = 'button' ng-click = "getAllChats()">Click here to see what people are chating about</button>
-
+	<div class="jumbotron">
+		<div class='container'>
+			<h1>Time to Chat</h1>
+		</div>
 	</div>
+
+
+	<div class="container input-group input-group-lg">
+    	<form  ng-submit='postChat()'>
+     		<input class="col-md-6" type="text" ng-model='newChat' placeholder="Enter your message here"> 
+     		<input type = 'submit'>       
+    	</form>
+	</div>
+
+	<div class='container' ng-repeat = 'chat in chats'>
+		<div class="row">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+				<h3>{{chat.body}}</h3>
+			<div class="col-md-4"></div>
+			</div>
+		</div>
+	</div>
+	
 
 
 
